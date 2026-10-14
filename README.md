@@ -123,6 +123,15 @@ Run configurations, model responses, failure details, and summaries are saved in
 
 To submit your results, refer to the instructions in the [GIFT-Eval-CTX dataset repository](https://huggingface.co/datasets/Salesforce/GiftEvalCTX).
 
-## License
+## Citation
 
-Apache License 2.0. See [LICENSE](LICENSE.txt).
+If you find this benchmark helpful, please cite our paper:
+
+```bibtex
+@article{liu2026giftevalctx,
+  title={GIFT-Eval-CTX: A Benchmark For Contextual Forecasting Model Evaluation},
+  author={Liu, Xu and Yan, Hanshu and Aksu, Taha and Pham, Quang and Qiao, Zhongzheng and Liew, Jun Hao and Savarese, Silvio and Sahoo, Doyen and Li, Junnan},
+  journal={arXiv preprint arXiv:2610.17794},
+  year={2026}
+}
+```
