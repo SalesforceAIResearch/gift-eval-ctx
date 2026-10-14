@@ -1,0 +1,44 @@
+[build-system]
+requires = ["hatchling>=1.27,<2"]
+build-backend = "hatchling.build"
+
+[project]
+name = "gift-eval-ctx"
+version = "0.1.0"
+description = "Evaluate API-based forecasts on the GIFT-Eval-CTX benchmark"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "Apache-2.0"
+dependencies = [
+    "numpy>=1.26,<3",
+    "pandas>=2.2,<4",
+    "pyarrow>=16,<25",
+    "filelock>=3.16,<4",
+    "datasets",
+    "huggingface-hub",
+    "python-dotenv",
+]
+
+[project.optional-dependencies]
+openai = ["openai>=2.30,<3"]
+anthropic = ["anthropic>=0.87,<1"]
+all = ["openai>=2.30,<3", "anthropic>=0.87,<1"]
+dev = ["pytest>=8,<10", "ruff>=0.12,<1", "build>=1.2,<2"]
+
+[project.scripts]
+gift-eval-ctx = "gift_eval_ctx.cli:main"
+
+[project.urls]
+Repository = "https://github.com/SalesforceAIResearch/gift-eval-ctx"
+Dataset = "https://huggingface.co/datasets/Salesforce/GiftEvalCTX"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+ignore = ["E501"] # Preserve the canonical prompt text.
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
