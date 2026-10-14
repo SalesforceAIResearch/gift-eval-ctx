@@ -94,13 +94,11 @@ Sampling and reasoning options are omitted unless requested. Their availability 
 
 For provider-specific settings, see the [OpenAI API documentation](https://developers.openai.com/api/reference/python/resources/responses/methods/create) and [Anthropic SDK documentation](https://platform.claude.com/docs/en/api/sdks/python).
 
-## Input and output
+## Output format
 
-The input is the benchmark's Parquet file. Required fields are `dataset`, `term`, `item_id`, `window_id`, `history`, `future`, `n_horizon`, and `frequency`. The `hist_effects` mode additionally requires `macro` and `micro`.
+The output Parquet contains six columns:
 
-The output Parquet contains exactly six columns, in input order:
-
-| Field | Arrow type | Meaning |
+| Field | Type | Meaning |
 | --- | --- | --- |
 | `dataset` | string | Dataset/configuration identifier |
 | `term` | string | Forecast term |
