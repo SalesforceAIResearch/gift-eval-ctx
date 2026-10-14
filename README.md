@@ -40,7 +40,7 @@ snapshot_download(
 )
 ```
 
-## Running an evaluation
+## Running Evaluations
 
 Create a `.env` file in the directory where you run the evaluator and fill in the API key for your provider:
 
@@ -94,7 +94,7 @@ Sampling and reasoning options are omitted unless requested. Their availability 
 
 For provider-specific settings, see the [OpenAI API documentation](https://developers.openai.com/api/reference/python/resources/responses/methods/create) and [Anthropic SDK documentation](https://platform.claude.com/docs/en/api/sdks/python).
 
-## Output format
+## Output Format
 
 The output Parquet contains six columns:
 
@@ -109,7 +109,7 @@ The output Parquet contains six columns:
 
 Forecasts shorter than the horizon are padded by repeating the final value; longer forecasts are truncated to the horizon. Samples with invalid forecast responses are recorded as failures.
 
-## Resume and logs
+## Resume and Logs
 
 Rerun the same command with the same output path to resume. Completed samples are skipped; failed or unfinished samples can be processed in later runs.
 
